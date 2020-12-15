@@ -16,7 +16,7 @@
     $_SESSION['nama'] = $data['nama']; // Set session untuk nama (simpan nama di session)
     
     setcookie("message","delete",time()-1); // Kita delete cookie message
-    
+
     header("location: welcome.php"); // Kita redirect ke halaman welcome.php
   }else{ // Jika $data nya kosong
     // Buat sebuah cookie untuk menampung data pesan kesalahan
