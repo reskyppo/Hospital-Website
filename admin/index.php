@@ -7,9 +7,9 @@
   <title>Admin</title>
 </head>
 <body>
-<div class="flex justify-center items-center">
-  <form action="" method="post" >
-    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+<div class="flex justify-center items-center h-screen bg-gray-500">
+  <form action="" method="post" class="lg:w-1/4" >
+    <div class="bg-white shadow-md rounded-lg  px-8 pt-6 pb-8 mb-4 flex flex-col">
         <div class="mb-4">
           <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
             Username
@@ -25,8 +25,15 @@
           if (isset($_POST['login'])) {
             if ($_POST['username'] === 'admin' && $_POST['password'] === 'admin123') {
               header("location: panel.php"); 
-            } else {
-              echo("<p class='text-sm text-red-500 font-semibold'>Password salah!</p>");
+            }  
+            elseif($_POST['username'] === '') {
+              echo("<p class='text-sm text-red-500 font-bold'>Username Tidak boleh kosong!</p>");
+            } 
+            elseif($_POST['password'] === '') {
+              echo("<p class='text-sm text-red-500 font-bold'>Password Tidak boleh kosong!</p>");
+            } 
+            else {
+              echo("<p class='text-sm text-red-500 font-bold'>Username atau Password salah!</p>");
             }
           }
           ?>
