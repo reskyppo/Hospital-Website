@@ -47,7 +47,8 @@
           </a>
         </div>
         <div class="lg:w-1/2 md:w-1/2 bg-gray-200 rounded-lg p-8 flex flex-col md:mx-auto mt-10 md:mt-0">
-          <h2 class="text-gray-900 text-2xl font-medium title-font mb-5">Hello, <?php echo $_SESSION['nama']; ?>!</h2>
+          <h2 class="text-gray-900 text-2xl font-medium title-font mb-5">Hello, <?php echo $_SESSION['nama'];  ?>!</h2>
+          <h2 class="text-gray-900 text-2xl font-medium title-font mb-5">Hello, <?php echo $_SESSION['nomor']; ?>!</h2>
           <p class="py-2 text-lg text-gray-700">Terimakasih telah mendaftar untuk mengikuti tes Swab dari rumah dengan Rumah Sakit kami.</p>
           <p class="py-2 text-lg text-gray-700">Berikut ini ialah nomor rekening dan kode unik yang harus anda sertakan pada foto untuk verifikasi data</p>
           <p class="pt-2 text-lg font-medium text-gray-700">BCA 07776699 A.N RS Children Health</p>
@@ -68,13 +69,14 @@
             if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
               if($ukuran < 1044070){			
                 move_uploaded_file($file_tmp, '../file/'.$nama);
-                $sql = "INSERT INTO upload (username, gambar, date) 
-                        VALUES (:username, :gambar, :date)";
+                $sql = "INSERT INTO control (nama, nomor, gambar, date) 
+                        VALUES (:nama, :nomor, :gambar, :date)";
                 $stmt = $pdo->prepare($sql);
 
                 // bind parameter ke query
                 $params = array(
-                    ":username" => $_SESSION['username'],
+                    ":nama" => $_SESSION['nama'],
+                    ":nomor" => $_SESSION['nomor'],
                     ":gambar" => $nama,
                     ":date" => $date
                 );

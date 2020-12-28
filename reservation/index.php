@@ -90,7 +90,8 @@
                     session_start();
                     header("Location: step-2.php");
                     $_SESSION['username'] = $username;
-                    $_SESSION['nama'] = $_POST['nama'];
+                    $_SESSION['nama'] = $nama;
+                    $_SESSION['nomor'] = $nomor;
                   }
                   else echo("error");
                 }

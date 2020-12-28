@@ -47,7 +47,9 @@
           </a>
         </div>
         <div class="lg:w-2/6 md:w-1/2 bg-gray-200 rounded-lg p-8 flex flex-col md:mx-auto mt-10 md:mt-0">
-          <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Registration</h2>
+          <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Yeay, Pesanan telah sukses dilakukan</h2>
+          <p class="pt-2 text-lg font-medium text-gray-700">Silahkan tunggu 1 x 24 Jam dari pembayaran untuk diproses melalui nomor yang telah diinputkan</p>
+          <p class="pt-2 text-lg font-medium text-gray-700">Terimakasih</p>
         </div>
       </div>
     </section>
