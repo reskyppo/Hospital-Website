@@ -27,6 +27,7 @@ require_once("../conn.php");
             <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Status</th>
             <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Created At</th>
             <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Gambar</th>
+            <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider lg:pl-16">Aksi</th>
           </tr>
         </thead>
         <tbody class="bg-white">
@@ -72,12 +73,31 @@ require_once("../conn.php");
                   <button class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">
                     <a href="http://localhost/rumahsakit/file/<?=
                     $row['gambar']
-                    ?>"> Lihat Gambar</a>
+                    ?>" target="_blank"> Lihat Gambar</a>
                   </button>
+              </td>
+              <td class="px-6 py-4 border-b border-gray-500 text-sm leading-5 flex  justify-start">
+                <a href='edit.php?id=<?php echo $row['id']; ?>'>
+                  <img src="../assets/img/checked.webp" alt="verify" class="cursor-pointer mx-2">
+                </a>
+                <a href='delete.php?id=<?php echo $row['id']; ?>&gambar=<?php echo $row['gambar']; ?>'>
+                  <img src="../assets/img/delete.webp" alt="delete" class="cursor-pointer mx-2">
+                </a>
               </td>
           </tr>
           <?php
             }
+          }
+          else {
+          ?>
+          <tr>
+            <td colspan="7" class="whitespace-no-wrap border-b border-gray-500 py-4 leading-5 text-center">
+              <p class="text-red-500 text-xl font-semibold">
+                Data Kosong
+              </p>
+            </td>
+          </tr>
+          <?php
           }
           ?>
         </tbody>
